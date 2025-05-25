@@ -1,0 +1,32 @@
+server:
+  port: 4004
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: auth-service-route
+          # because LocalStack doesn't implement ECS cloud discovery, all the service name won't be
+          # resolved so we can use the 'host.docker.internal' with each service port. and docker
+          # will determine which service to send the request to.
+          uri: http://host.docker.internal:4005 # So 'host.docker.internal:4005' instead of 'auth-service:4005'
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
+
+        - id: patient-service-route
+          uri: http://host.docker.internal:4000
+          predicates:
+            - Path=/api/patients/**
+          filters:
+            - StripPrefix=1
+            - JwtValidation
+
+        - id: api-docs-patient-route
+          uri: http://host.docker.internal:4000
+          predicates:
+            - Path=/api-docs/patients
+          filters:
+            - RewritePath=/api-docs/patients,/v3/api-docs
+

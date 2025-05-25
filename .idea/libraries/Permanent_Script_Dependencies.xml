@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="Permanent Script Dependencies">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Library/Caches/JetBrains/IdeaIC2025.1/kotlinNotebook/patient-management.24a4d7a4/kernels/0.12.0-398/kotlin-jupyter-ide-classpath-shadowed-jar/kotlin-jupyter-ide-classpath-shadowed-0.12.0-398.jar" />
+      <root url="file://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-clients/3.7.0/kafka-clients-3.7.0.jar" />
+      <root url="file://$MAVEN_REPOSITORY$/com/github/luben/zstd-jni/1.5.5-6/zstd-jni-1.5.5-6.jar" />
+      <root url="file://$MAVEN_REPOSITORY$/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar" />
+      <root url="file://$MAVEN_REPOSITORY$/org/xerial/snappy/snappy-java/1.1.10.5/snappy-java-1.1.10.5.jar" />
+      <root url="file://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/Library/Caches/JetBrains/IdeaIC2025.1/kotlinNotebook/patient-management.24a4d7a4/kernels/0.12.0-398/kotlin-jupyter-script-classpath-shadowed-sources-jar/kotlin-jupyter-script-classpath-shadowed-0.12.0-398-sources.jar" />
+      <root url="file://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-clients/3.7.0/kafka-clients-3.7.0-sources.jar" />
+      <root url="file://$MAVEN_REPOSITORY$/com/github/luben/zstd-jni/1.5.5-6/zstd-jni-1.5.5-6-sources.jar" />
+      <root url="file://$MAVEN_REPOSITORY$/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0-sources.jar" />
+      <root url="file://$MAVEN_REPOSITORY$/org/xerial/snappy/snappy-java/1.1.10.5/snappy-java-1.1.10.5-sources.jar" />
+      <root url="file://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36-sources.jar" />
+    </SOURCES>
+  </library>
+</component>

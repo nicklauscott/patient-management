@@ -1,0 +1,38 @@
+server:
+  port: 4004
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: auth-service-route
+          uri: http://auth-service:4005
+          predicates:
+              - Path=/auth/**
+          filters:
+              - StripPrefix=1
+
+        # Route for forwarding patient-related API requests
+        - id: patient-service-route
+          # URI of the patient-service (typically another microservice running in a Docker container)
+          uri: http://patient-service:4000
+          predicates:
+            # Only route requests that match this path pattern
+            - Path=/api/patients/**
+          filters:
+            # Remove the first segment (/api) from the path before forwarding
+            - StripPrefix=1
+            - JwtValidation # This will apply the 'JwtValidationGatewayFilterFactory' filter to this route
+
+        # Route for forwarding Swagger API documentation requests
+        - id: api-docs-patient-route
+          # Same patient-service URI, assuming it's also serving the OpenAPI docs
+          uri: http://patient-service:4000
+          predicates:
+            # Match exactly /api-docs/patients
+            - Path=/api-docs/patients
+          filters:
+            # Rewrite the request path from /api-docs/patients to /v3/api-docs
+            # This allows the gateway to serve Swagger UI docs at a clean, consistent path
+            - RewritePath=/api-docs/patients,/v3/api-docs
+
