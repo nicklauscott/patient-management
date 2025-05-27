@@ -1,0 +1,15 @@
+# Ignore IDE configuration files
+.idea/** linguist-vendored
+
+# Ignore database-related files
+auth-service-db/** linguist-generated
+patient-service-db/** linguist-generated
+
+# Ignore infrastructure and test files
+infrastructure/** linguist-generated
+integration-tests/** linguist-generated
+
+# Ignore miscellaneous files
+.DS_Store linguist-generated
+patient-management.iml linguist-generated
+
